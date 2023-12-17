@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 
-import LearnStyling from './learning-progress/LearnStyling';
+import LearnMultipleStyle from './learning-progress/LearnMultipleStyle';
 
 export default function App() {
   const [bgColor, setBgColor] = useState('white');
 
-  return <LearnStyling />;
+  return <LearnMultipleStyle />;
 }

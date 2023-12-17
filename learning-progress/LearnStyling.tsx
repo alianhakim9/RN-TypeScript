@@ -16,7 +16,7 @@ export default function LearnStyling() {
   );
 }
 
-export const styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     display: 'flex',
     flex: 1,
