@@ -1,10 +1,9 @@
 import React, {useState} from 'react';
 
-import LearnImage from './learning-progress/LearnImage';
-import LearnScrollView from './learning-progress/LearnScrollView';
+import LearnButton from './learning-progress/LearnButton';
 
 export default function App() {
   const [bgColor, setBgColor] = useState('white');
 
-  return <LearnScrollView />;
+  return <LearnButton />;
 }
