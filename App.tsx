@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 
-import LearnActivityIndicator from './learning-progress/LearnActivityIndicator';
+import LearnAlert from './learning-progress/LearnAlert';
 
 export default function App() {
   const [bgColor, setBgColor] = useState('white');
 
-  return <LearnActivityIndicator />;
+  return <LearnAlert />;
 }
