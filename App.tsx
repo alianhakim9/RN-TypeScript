@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 
-import LearnModal from './learning-progress/LearnModal';
+import LearnStatusBar from './learning-progress/LearnStatusBar';
 
 export default function App() {
   const [bgColor, setBgColor] = useState('white');
 
-  return <LearnModal />;
+  return <LearnStatusBar />;
 }
