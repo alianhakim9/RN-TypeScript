@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 
-import LearnAlert from './learning-progress/LearnAlert';
+import LearnCustomComponents from './learning-progress/LearnCustomComponents';
 
 export default function App() {
   const [bgColor, setBgColor] = useState('white');
 
-  return <LearnAlert />;
+  return <LearnCustomComponents />;
 }
