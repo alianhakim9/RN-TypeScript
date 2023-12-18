@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 
-import LearnShadowAndElevation from './learning-progress/LearnShadowAndElevation';
+import LearnStyleInheritance from './learning-progress/LearnStyleInheritance';
 
 export default function App() {
   const [bgColor, setBgColor] = useState('white');
 
-  return <LearnShadowAndElevation />;
+  return <LearnStyleInheritance />;
 }
