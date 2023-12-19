@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 
-import LearnSafeAreaView from './learning-progress/LearnSafeAreaView';
+import LearnPlatformSpecificCode from './learning-progress/LearnPlatformSpecificCode';
 
 export default function App() {
   const [bgColor, setBgColor] = useState('white');
 
-  return <LearnSafeAreaView />;
+  return <LearnPlatformSpecificCode />;
 }
