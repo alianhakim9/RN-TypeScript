@@ -2,14 +2,14 @@ import React, {useState} from 'react';
 
 import {SafeAreaView, StatusBar, StyleSheet} from 'react-native';
 
-import LearnList from './learning-progress/learn-list/LearnList';
+import LearnFlatList from './learning-progress/learn-list/LearnFlatList';
 
 export default function App() {
   const [bgColor, setBgColor] = useState('white');
 
   return (
     <SafeAreaView style={styles.safeContainer}>
-      <LearnList />
+      <LearnFlatList />
     </SafeAreaView>
   );
 }
