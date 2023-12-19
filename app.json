@@ -1,4 +1,5 @@
 {
   "name": "ReactNativeApp",
-  "displayName": "ReactNativeApp"
+  "displayName": "ReactNativeApp",
+  "orientation": "default"
 }
