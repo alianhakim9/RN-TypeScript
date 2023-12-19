@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 
-import LearnDimensionAPIDrawback from './learning-progress/learn-dimension-api/LearnDimensionApiDrawback';
+import LearnUseWindowDimension from './learning-progress/learn-dimension-api/LearnUseWindowDimension';
 
 export default function App() {
   const [bgColor, setBgColor] = useState('white');
 
-  return <LearnDimensionAPIDrawback />;
+  return <LearnUseWindowDimension />;
 }
