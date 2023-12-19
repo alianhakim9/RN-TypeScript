@@ -17,8 +17,8 @@ const styles = StyleSheet.create({
   box: {
     backgroundColor: '#fff',
     padding: 10,
-    // width: 50,
-    // height: 50,
+    width: 100,
+    height: 100,
     flexGrow: 1,
   },
   text: {
