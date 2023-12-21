@@ -2,14 +2,14 @@ import React, {useState} from 'react';
 
 import {SafeAreaView, StatusBar, StyleSheet} from 'react-native';
 
-import LearnTextInput from './learning-progress/LearnTextInput';
+import LearnSwitch from './learning-progress/LearnSwitch';
 
 export default function App() {
   const [bgColor, setBgColor] = useState('white');
 
   return (
     <SafeAreaView style={styles.safeContainer}>
-      <LearnTextInput />
+      <LearnSwitch />
     </SafeAreaView>
   );
 }
