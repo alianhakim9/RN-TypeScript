@@ -1,5 +1,11 @@
 import {useEffect, useState} from 'react';
-import {View, Text, StyleSheet, FlatList} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  FlatList,
+  ActivityIndicator,
+} from 'react-native';
 
 type Post = {
   id: string;
@@ -10,6 +16,7 @@ type Post = {
 
 export default function LearnNetworking() {
   const [postList, setPostList] = useState<Post[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const fetchData = async (limit = 10) => {
     const response = await fetch(
@@ -17,11 +24,21 @@ export default function LearnNetworking() {
     );
     const data = await response.json();
     setPostList(data);
+    setIsLoading(false);
   };
 
   useEffect(() => {
     fetchData();
   }, []);
+
+  if (isLoading) {
+    return (
+      <View style={styles.loadingContainer}>
+        <ActivityIndicator size="large" color="#000ff" />
+        <Text>Loading</Text>
+      </View>
+    );
+  }
 
   return (
     <View style={styles.listContainer}>
@@ -49,6 +66,7 @@ export default function LearnNetworking() {
         ListEmptyComponent={() => (
           <Text style={styles.emptyText}>No Posts Found</Text>
         )}
+        showsVerticalScrollIndicator={false}
       />
     </View>
   );
@@ -89,5 +107,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     alignSelf: 'center',
     justifyContent: 'center',
+  },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
