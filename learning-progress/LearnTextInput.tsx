@@ -6,7 +6,16 @@ export default function LearnTextInput() {
 
   return (
     <View>
-      <TextInput style={styles.input} value={name} onChangeText={setName} />
+      <TextInput
+        style={styles.input}
+        value={name}
+        onChangeText={setName}
+        placeholder="email@example.com"
+        // secureTextEntry // using this for password input
+        // keyboardType="email-address"
+        autoCorrect={false}
+        autoCapitalize="none"
+      />
       <Text style={styles.greetText}>Hello {name}</Text>
     </View>
   );
@@ -16,8 +25,9 @@ const styles = StyleSheet.create({
   input: {
     height: 40,
     margin: 12,
-    padding: 10,
+    padding: 12,
     borderWidth: 1,
+    borderRadius: 8,
   },
   greetText: {
     margin: 12,
