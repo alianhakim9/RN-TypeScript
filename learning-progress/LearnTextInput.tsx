@@ -17,6 +17,14 @@ export default function LearnTextInput() {
         autoCapitalize="none"
       />
       <Text style={styles.greetText}>Hello {name}</Text>
+
+      {/* Multiline Text Input */}
+
+      <TextInput
+        placeholder="Message"
+        style={[styles.input, styles.multilineText]}
+        multiline
+      />
     </View>
   );
 }
@@ -33,5 +41,9 @@ const styles = StyleSheet.create({
     margin: 12,
     fontSize: 14,
     fontWeight: 'bold',
+  },
+  multilineText: {
+    minHeight: 100,
+    textAlignVertical: 'top',
   },
 });
