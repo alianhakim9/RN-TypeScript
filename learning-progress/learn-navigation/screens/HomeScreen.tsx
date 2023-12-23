@@ -4,10 +4,13 @@ import {RootStackParamList} from '../RootStackParamList';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
-export default function HomeScreen({navigation}: Props) {
+export default function HomeScreen({route, navigation}: Props) {
+  const params = route.params;
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>HomeScreen</Text>
+      <Text style={styles.text}>
+        {params?.result ? params?.result : 'Home Screen'}
+      </Text>
       <Button
         title="Go to about"
         onPress={() => navigation.navigate('About')}
