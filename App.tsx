@@ -1,23 +1,18 @@
-import React, {useState} from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import AboutScreen from './learning-progress/learn-navigation/screens/AboutScreen';
+import HomeScreen from './learning-progress/learn-navigation/screens/HomeScreen';
+import {RootStackParamList} from './learning-progress/learn-navigation/RootStackParamList';
 
-import {SafeAreaView, StatusBar, StyleSheet} from 'react-native';
-
-import LearnNetworking from './learning-progress/learn-networking/LearnNetworking';
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function App() {
-  const [bgColor, setBgColor] = useState('white');
-
   return (
-    <SafeAreaView style={styles.safeContainer}>
-      <LearnNetworking />
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="About" component={AboutScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  safeContainer: {
-    flex: 1,
-    backgroundColor: '#f5f5f5',
-    paddingTop: StatusBar.currentHeight,
-  },
-});
