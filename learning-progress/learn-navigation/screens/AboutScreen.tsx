@@ -1,11 +1,17 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {Button, StyleSheet, Text, View} from 'react-native';
 import {RootStackParamList} from '../RootStackParamList';
+import {useLayoutEffect} from 'react';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'About'>;
 
 export default function AboutScreen({route, navigation}: Props) {
   const params = route.params;
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      title: params?.name,
+    });
+  }, []);
   return (
     <View style={styles.container}>
       <Text style={styles.text}>About {params?.name}</Text>
@@ -13,7 +19,7 @@ export default function AboutScreen({route, navigation}: Props) {
         title="Update the name"
         onPress={() =>
           navigation.setParams({
-            name: 'Alian',
+            name: 'Alian Hakim',
           })
         }
       />

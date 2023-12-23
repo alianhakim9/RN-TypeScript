@@ -20,17 +20,7 @@ export default function NavigationApp() {
           headerTitleStyle: {
             fontWeight: 'bold',
           },
-          headerRight: () => (
-            <Pressable onPress={() => Alert.alert('Menu button pressed!')}>
-              <Text
-                style={{
-                  fontSize: 16,
-                  color: '#FFD1E3',
-                }}>
-                Menu
-              </Text>
-            </Pressable>
-          ),
+
           contentStyle: {
             backgroundColor: '#A367B1',
           },
@@ -41,6 +31,17 @@ export default function NavigationApp() {
           options={{
             title: 'Welcome Home',
             fullScreenGestureEnabled: true,
+            headerRight: () => (
+              <Pressable onPress={() => Alert.alert('Menu button pressed!')}>
+                <Text
+                  style={{
+                    fontSize: 16,
+                    color: '#FFD1E3',
+                  }}>
+                  Menu
+                </Text>
+              </Pressable>
+            ),
           }}
         />
         <Stack.Screen
@@ -49,6 +50,9 @@ export default function NavigationApp() {
           initialParams={{
             name: 'Guest',
           }}
+          // options={({route}) => ({
+          //   title: route.params?.name,
+          // })}
         />
       </Stack.Navigator>
       <StatusBar backgroundColor="#392467" />
