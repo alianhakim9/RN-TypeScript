@@ -10,8 +10,22 @@ const Drawer = createDrawerNavigator<DrawerStackParamList>();
 export default function DrawerNavigationApp() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator>
-        <Drawer.Screen name="Dashboard" component={DashboardScreen} />
+      <Drawer.Navigator
+        screenOptions={{
+          drawerActiveTintColor: 'white',
+          drawerActiveBackgroundColor: '#756AB6',
+          drawerContentStyle: {
+            backgroundColor: '#FFE5E5',
+          },
+        }}>
+        <Drawer.Screen
+          name="Dashboard"
+          component={DashboardScreen}
+          options={{
+            title: 'My Dashboard',
+            drawerLabel: 'Dashboard Label',
+          }}
+        />
         <Drawer.Screen name="Settings" component={SettingsScreen} />
       </Drawer.Navigator>
       <StatusBar barStyle={'dark-content'} backgroundColor="white" />
